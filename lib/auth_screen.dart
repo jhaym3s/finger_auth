@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_developer_task/custom_bottom_navigation.dart';
 import 'package:flutter_developer_task/home_screen.dart';
 import 'package:flutter_developer_task/local_api.dart';
 import 'package:flutter_developer_task/main.dart';
@@ -75,7 +76,7 @@ class AuthScreen extends StatelessWidget {
 
           if (isAuthenticated) {
             Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => CustomNavigationBar()),
             );
           }
         },

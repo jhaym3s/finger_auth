@@ -29,6 +29,7 @@ class LocalAuthApi {
         localizedReason: 'Scan Fingerprint to Authenticate',
         useErrorDialogs: true,
         stickyAuth: true,
+        biometricOnly: true,
       );
     } on PlatformException catch (e) {
       return false;

@@ -27,32 +27,28 @@ class _HomeScreenState extends State<HomeScreen> {
         print('No image selected.');
       }
     });
+  
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
      body: Center(child: 
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
        children: [
        Container(
+         child: _image==null?Center(child: Text("Image goes here")): Image.file(_image!),
          height: 300,width: 200,
-        decoration:  BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-            image:FileImage(_image!),
-            fit: BoxFit.fitHeight,
-          ),
-        ),
+         decoration: BoxDecoration(border: Border.all(width:3),
+         borderRadius: BorderRadius.circular(15)
+         ),
        ),
-         ElevatedButton.icon(onPressed: getImage, 
-         icon: Icon(Icons.camera_alt_rounded), 
-         label: Text("Camera"),),
        ],
      ),),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        Navigator.of(context).pushNamed(NextPage.routeName);
-      }, child: Icon(Icons.navigate_next),),
+     floatingActionButton: FloatingActionButton(onPressed: () { 
+       getImage();
+      },child: Icon(Icons.camera_alt),),
     );
   }
 }
